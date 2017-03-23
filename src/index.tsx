@@ -1,18 +1,22 @@
+declare const require: any;
+require('fetch-ie8');
 import * as React from "react";
 import * as ReactDOM from "react-dom";
 import { Provider } from "react-redux";
-import { applyMiddleware, createStore } from "redux";
+import { applyMiddleware, createStore, compose } from "redux";
 import thunk from "redux-thunk";
 import * as Actions from "./actions";
 import Homepage from "./containers/Homepage";
 import { helloApp } from "./reducers";
 
+declare const window: any;
+const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 const store = createStore(
     helloApp,
-    applyMiddleware(thunk),
+    composeEnhancers(applyMiddleware(thunk))
 );
 // Log the initial state
-console.log(store.getState());
+console.log(store.getState());;
 
 // Every time the state changes, log it
 // Note that subscribe() returns a function for unregistering the listener

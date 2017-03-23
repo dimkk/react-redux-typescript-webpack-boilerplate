@@ -11,13 +11,21 @@ This is just a hyper minimalist boilerplate to get started with:
 - Redux
 - Typescript2
 - Webpack2
+- Webpack dev server
+
+IE8 compt in progress
 
 ## Installation
 
 ```bash
-npm install -g yarn
-yarn
-yarn run build
+npm install
+npm start
+```
+
+## Build
+
+```bash
+npm run build
 ```
 
 ## Demo
