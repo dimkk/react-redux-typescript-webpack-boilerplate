@@ -1,4 +1,6 @@
 import { combineReducers } from "redux";
+import { routerReducer } from 'react-router-redux'
+
 import { ADD_ERROR, ADD_JOKE, ADD_LOG, ADD_MESSAGE } from "../actions";
 
 const initialState = {
@@ -63,4 +65,5 @@ function logs(state = { errors: [], logs: [] }, action: any) {
 export const helloApp = combineReducers({
     greetings,
     logs,
+    routing: routerReducer
 });
